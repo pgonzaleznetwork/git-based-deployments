@@ -16,11 +16,11 @@ public with sharing class ApexClassUtilities {
      * ApexClass klass = [SELECT Name, Body FROM ApexClass LIMIT 1];
      * System.debug(ApexClassUtilities.getGroupBodyFromClassBody(klass));
      */
-    public static String getGroupFromClassBody(ApexClass klass) {
+    public static String getGroupFromClassBody(ApexClass theApexClass) {
         Pattern patternForFindingGroupTagInHeader = Pattern.compile(
             '.*@group.(.*)'
         );
-        Matcher matcher = patternForFindingGroupTagInHeader.matcher(klass.Body);
+        Matcher matcher = patternForFindingGroupTagInHeader.matcher(theApexClass.Body);
         matcher.find();
         String groupName = '';
         try {
@@ -28,7 +28,7 @@ public with sharing class ApexClassUtilities {
         } catch (StringException matcherException) {
             System.debug(
                 LoggingLevel.INFO,
-                'Failed to extract group name. Class name: ' + klass.Name
+                'Failed to extract group name. Class name: ' + theApexClass.Name
             );
         }
 
