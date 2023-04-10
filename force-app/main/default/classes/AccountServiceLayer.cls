@@ -110,11 +110,11 @@ public with sharing class AccountServiceLayer {
      * System.debug([SELECT Name, Description FROM Account WHERE id in : accounts]);
      **/
     @testVisible
-    private static void safelySave(List<Account> accounts) {
+    private static void safelySave(List<Account> accountsToUpdate) {
         try {
             System.SObjectAccessDecision decision = Security.stripInaccessible(
                 AccessType.CREATABLE,
-                accounts
+                accountsToUpdate
             );
             update decision.getRecords();
         } catch (DmlException dmle) {
