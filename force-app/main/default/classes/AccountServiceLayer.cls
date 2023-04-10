@@ -113,14 +113,14 @@ public with sharing class AccountServiceLayer {
     private static void safelySave(List<Account> accounts) {
         try {
             System.SObjectAccessDecision decision = Security.stripInaccessible(
-                AccessType.UPDATABLE,
+                AccessType.CREATABLE,
                 accounts
             );
             update decision.getRecords();
         } catch (DmlException dmle) {
             System.debug(
                 LoggingLevel.INFO,
-                'Hey, a DML error occurred while updating.'
+                'Hey, a DML error occurred while creating.'
             );
             throw new ASLException(dmle.getMessage());
         } catch (System.NoAccessException nae) {
