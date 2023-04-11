@@ -4,9 +4,7 @@ public with sharing class AccountServiceLayer {
     private static String didExecuteMethod;
     //This will not be deployed!!!
 
-    /**
-     * @description Internal custom exception class
-     */
+
     public class ASLException extends Exception {
     }
 
