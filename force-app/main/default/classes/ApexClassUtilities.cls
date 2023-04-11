@@ -18,7 +18,7 @@ public with sharing class ApexClassUtilities {
      */
     public static String getGroupFromClassBody(ApexClass theApexClass) {
         Pattern patternForFindingGroupTagInHeader = Pattern.compile(
-            '.*@group.(.*)'
+            '.*@test.(.*)'
         );
         Matcher matcher = patternForFindingGroupTagInHeader.matcher(theApexClass.Body);
         matcher.find();
