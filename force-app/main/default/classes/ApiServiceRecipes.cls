@@ -69,7 +69,7 @@ public with sharing class ApiServiceRecipes extends RestClient {
             }
             when else {
                 throw new ApiServiceRecipes.ApiException(
-                    'Unexpected Response code: ' + response.getStatusCode()
+                    'Received an Unexpected Response code: ' + response.getStatusCode()
                 );
             }
         }
