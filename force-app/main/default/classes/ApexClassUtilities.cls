@@ -10,7 +10,7 @@ public with sharing class ApexClassUtilities {
      * @description Extracts the @group annotation from a class' body.
      * Also demonstrates the use of Regex matchers in Apex.
      * @param klass an ApexClass object
-     * @return     `String` This is the text following '@group' through
+     * @return     `String` This is the text following '@group' through hello
      * the end of the line.
      * @example
      * ApexClass klass = [SELECT Name, Body FROM ApexClass LIMIT 1];
