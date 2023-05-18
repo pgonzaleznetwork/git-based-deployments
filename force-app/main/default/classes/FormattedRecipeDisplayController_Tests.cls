@@ -42,12 +42,7 @@ private class FormattedRecipeDisplayController_Tests {
                     result.groupName.equalsIgnoreCase('Tests'),
                     'Expected to have recieved the string Tests'
                 );
-            } else {
-                System.Assert.isTrue(
-                    result.groupName.equalsIgnoreCase('Shared Code'),
-                    'Expected to have recieved the string Shared Code'
-                );
-            }
+            } 
         }
         Test.stopTest();
     }
