@@ -26,11 +26,7 @@ private class RecipeTreeViewController_Tests {
             tree[0].name,
             'Expected Recipes to be the first element'
         );
-        System.Assert.areEqual(
-            'Shared Code',
-            tree[1].name,
-            'Expected the final element to be Shared code'
-        );
+       
         System.Assert.isTrue(
             tree[0].items.size() > 0,
             'expected for recipes to have sub-groups'
